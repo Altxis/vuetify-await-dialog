@@ -5,8 +5,12 @@
       <v-card-text>{{ description }}</v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="primary" text @click="agree">Да</v-btn>
-        <v-btn color="primary" text @click="disagree">Нет</v-btn>
+        <v-btn color="primary" text @click="agree">{{
+          yesButtonCaption
+        }}</v-btn>
+        <v-btn color="primary" text @click="disagree">{{
+          noButtonCaption
+        }}</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -39,7 +43,7 @@ export default {
   },
   methods: {
     open() {
-      return new Promise(res => {
+      return new Promise((res) => {
         this.dialog = true
         this.resolve = res
       })
